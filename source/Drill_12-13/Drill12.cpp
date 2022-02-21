@@ -20,7 +20,7 @@ using namespace Graph_lib;
 	ya.set_color(Color::cyan);
 	ya.label.set_color(Color::red);
 
-	Closed_polyline poly;
+	Polygon poly;
 	poly.add(Point{50, 50});
 	poly.add(Point{100, 50});
 	poly.add(Point{75, 100});
@@ -50,6 +50,25 @@ using namespace Graph_lib;
 		<< "; window size: " << win.x_max() << "*" << win.y_max();
 	Text sizes {Point{100, 20}, oss.str()};
 
+	Closed_polyline poly1;
+
+	poly1.add(Point{100, 100});
+	poly1.add(Point{100, 200});
+	poly1.add(Point{200, 200});
+	poly1.add(Point{200, 100});
+
+	poly1.set_style(Line_style::dashdotdot);
+
+	Rectangle r (Point{300, 300}, 100, 50);
+
+	Text t {Point{150, 150}, "I don't know what I'm doing!"};
+
+	Ellipse e {Point{100, 100}, 10, 25};
+
+	win.attach(e);
+	win.attach(t);
+	win.attach(r);
+	win.attach(poly1);
 	win.attach(i1);
 	win.attach(i2);
 	win.attach(sine);
@@ -59,6 +78,8 @@ using namespace Graph_lib;
 	win.attach(xa);
 	win.attach(ya);
 	win.attach(sizes);
+
+	win.set_label("Canvas#2");
 
 	win.wait_for_button();
 
