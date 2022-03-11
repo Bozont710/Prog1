@@ -26,7 +26,7 @@ int main(){
 
 	for( int i = 0; i < 900; i += x_grid )
 		for( int j = 0; j < 900; j += y_grid ){
-			if(i = j){
+			if(i == j){
 				rect.push_back(new Rectangle{Point{i-100, j-100}, 100, 100});
 				rect[rect.size()-1].set_fill_color(Color::red);
 				win.attach(rect[rect.size()-1]);
