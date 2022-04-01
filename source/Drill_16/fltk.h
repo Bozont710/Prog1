@@ -14,4 +14,3 @@
 #include "Fl/Fl_GIF_Image.H"
 
 #endif
-
